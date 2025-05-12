@@ -50,10 +50,14 @@ def get_prediction_class(price):
     """Classify prediction price into categories"""
     if price < 3000000:
         return 1
-    elif 3000000 <= price < 5000000:
+    elif 3000000 <= price < 4000000:
         return 2
-    else:
+    elif 4000000 <= price < 5000000:
         return 3
+    elif 5000000 <= price < 6000000:
+        return 4
+    else:
+        return 5
 
 def store_to_dynamodb(record_id, data_point, predicted_price, prediction_class):
     """Store prediction result in DynamoDB"""
